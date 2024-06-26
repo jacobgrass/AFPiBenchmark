@@ -1,7 +1,7 @@
 #include "BenchmarkTest.h"
 
 // generate millions of random samples
-static float samples = 10e6;
+static int samples = 10e6;
 // Multiple runs for accurate timing
 const int num_runs = 100;
 
@@ -40,20 +40,19 @@ void BenchmarkTest::pi_host(double& result) {
 void  BenchmarkTest::pi_omp(double& result) {
     int count = 0;
 
-#pragma omp parallel
-    {
+    
         // C++11 random number generation setup
         std::random_device rd;  // Seed generator
         std::mt19937 gen(rd() ^ omp_get_thread_num());  // Mersenne Twister generator seeded with random device and thread ID
         std::uniform_real_distribution<> dis(0.0, 1.0); // Uniform distribution between 0 and 1
 
-#pragma omp for reduction(+:count)
+#pragma omp parallel for
         for (int i = 0; i < samples; i++) {
             float x = dis(gen);
             float y = dis(gen);
             if (std::sqrt(x * x + y * y) < 1.0)
                 count++;
         }
-    }
+        
     result = 4.0 * count / samples;
 }

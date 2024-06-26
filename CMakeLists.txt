@@ -1,39 +1,36 @@
-﻿# CMakeList.txt : CMake project for AFPiBenchMark, include source and define
-# project specific logic here.
-#
-# Add source to this project's executable.
-add_executable (AFPiBenchMark "main.cpp" "AFPiBenchMark.h")
+﻿cmake_minimum_required(VERSION 3.12)
 
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET AFPiBenchMark PROPERTY CXX_STANDARD 20)
-endif()
+project(AFPiBenchMark)
 
-# TODO: Add tests and install targets if needed.
+#add_executable(AFPiBenchMark "main.cpp" "AFPiBenchMark.h")
 
-find_package(ArrayFire)
+# Set the C++ standard
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# Find ArrayFire
+find_package(ArrayFire REQUIRED)
 # Find OpenMP
 find_package(OpenMP REQUIRED)
+
+# Compile and link each variant of the benchmark, if available
 if(ArrayFire_CPU_FOUND)
-  add_executable(AFPiBenchMark_cpu main.cpp 
-  BenchmarkTest.h  BenchmarkTest.cpp)
-  target_link_libraries(AFPiBenchMark_cpu ArrayFire::afcpu)
+  add_executable(AFPiBenchMark_cpu main.cpp BenchmarkTest.h BenchmarkTest.cpp)
+  target_link_libraries(AFPiBenchMark_cpu ArrayFire::afcpu OpenMP::OpenMP_CXX)
+  add_custom_command(TARGET AFPiBenchMark_cpu POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:ArrayFire::afcpu> $<TARGET_FILE_DIR:AFPiBenchMark_cpu>)
 endif()
 
 if(ArrayFire_CUDA_FOUND)
-  add_executable(AFPiBenchMark_cuda main.cpp 
-  BenchmarkTest.h  BenchmarkTest.cpp)
-  target_link_libraries(AFPiBenchMark_cuda ArrayFire::afcuda)
+  add_executable(AFPiBenchMark_cuda main.cpp BenchmarkTest.h BenchmarkTest.cpp)
+  target_link_libraries(AFPiBenchMark_cuda ArrayFire::afcuda OpenMP::OpenMP_CXX)
+  add_custom_command(TARGET AFPiBenchMark_cuda POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:ArrayFire::afcuda> $<TARGET_FILE_DIR:AFPiBenchMark_cuda>)
 endif()
 
 if(ArrayFire_OpenCL_FOUND)
-  add_executable(AFPiBenchMark_opencl main.cpp
-  BenchmarkTest.h  BenchmarkTest.cpp)
-  target_link_libraries(AFPiBenchMark_opencl ArrayFire::afopencl)
+  add_executable(AFPiBenchMark_opencl main.cpp BenchmarkTest.h BenchmarkTest.cpp)
+  target_link_libraries(AFPiBenchMark_opencl ArrayFire::afopencl OpenMP::OpenMP_CXX)
+  add_custom_command(TARGET AFPiBenchMark_opencl POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:ArrayFire::afopencl> $<TARGET_FILE_DIR:AFPiBenchMark_opencl>)
 endif()
-
-if(ArrayFire_oneAAFPiBenchMark_FOUND)
-  add_executable(AFPiBenchMark_oneaAFPiBenchMark main.cpp
-  BenchmarkTest.h  BenchmarkTest.cpp)
-  target_link_libraries(AFPiBenchMark_oneaAFPiBenchMark ArrayFire::afoneaAFPiBenchMark)
-endif()
-
