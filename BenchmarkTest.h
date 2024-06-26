@@ -15,9 +15,9 @@ using namespace std::chrono;
 class BenchmarkTest
 {
 public:
-	float samples;
+	int samples;
 	int num_runs;
-	BenchmarkTest(float samples, int num_runs);
+	BenchmarkTest(int samples, int num_runs);
 	void pi_device(double& result);
 	void pi_host(double& result);
 	void pi_omp(double& result);

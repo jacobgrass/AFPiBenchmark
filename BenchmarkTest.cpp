@@ -5,7 +5,7 @@ static int samples = 10e6;
 // Multiple runs for accurate timing
 const int num_runs = 100;
 
-BenchmarkTest::BenchmarkTest(float samples, int num_runs) : samples(samples), num_runs(num_runs)
+BenchmarkTest::BenchmarkTest(int samples, int num_runs) : samples(samples), num_runs(num_runs)
 {
 }
 
@@ -40,13 +40,14 @@ void BenchmarkTest::pi_host(double& result) {
 void  BenchmarkTest::pi_omp(double& result) {
     int count = 0;
 
-    
+#pragma omp parallel
+    {
         // C++11 random number generation setup
         std::random_device rd;  // Seed generator
         std::mt19937 gen(rd() ^ omp_get_thread_num());  // Mersenne Twister generator seeded with random device and thread ID
         std::uniform_real_distribution<> dis(0.0, 1.0); // Uniform distribution between 0 and 1
 
-#pragma omp parallel for
+#pragma omp for 
         for (int i = 0; i < samples; i++) {
             float x = dis(gen);
             float y = dis(gen);
@@ -54,5 +55,6 @@ void  BenchmarkTest::pi_omp(double& result) {
                 count++;
         }
         
+    }
     result = 4.0 * count / samples;
 }
