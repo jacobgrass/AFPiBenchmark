@@ -11,7 +11,7 @@
 #include "BenchmarkTest.h"
 #include <string>
 #include <fstream>
-
+#include <filesystem>
 // Include additional libraries
 #ifdef _WIN32
 #include <windows.h>
@@ -156,7 +156,8 @@ int main(int argc, char** argv) {
         // Create a text file that stores the system configuration
         std::string deviceNameStr(deviceName);
         std::string platformStr(platform);
-        std::string systemConfigFile = "systemConfig_"+deviceNameStr+"_"+platformStr+".txt";
+        std::filesystem::create_directories("./results");
+        std::string systemConfigFile = "./results/systemConfig_"+deviceNameStr+"_"+platformStr+".txt";
         std::ofstream sysConfig(systemConfigFile);
         if (sysConfig.is_open()) {
             sysConfig << "System Configuration\n";
@@ -172,7 +173,7 @@ int main(int argc, char** argv) {
             std::cerr << "Unable to open file " << systemConfigFile << std::endl;
         }
 
-        std::string csvFile = "benchmarkResults_"+deviceNameStr+"_"+platformStr+".csv";
+        std::string csvFile = "./results/benchmarkResults_"+deviceNameStr+"_"+platformStr+".csv";
 
         // Header for CSV file
         std::ofstream file(csvFile);
