@@ -146,35 +146,35 @@ int main(int argc, char** argv) {
         int device = argc > 1 ? atoi(argv[1]) : 0;
         setDevice(device);
         info();
-        //char deviceName[256]; 
-        //char platform[256];
-        //char* toolkit = nullptr;
-        //char* compute = nullptr;
+        char deviceName[256]; 
+        char platform[256];
+        char toolkit[256]; 
+        char compute[256]; 
 
         // Retrieve only the device name
-        //af::deviceInfo(deviceName, platform, toolkit, compute);
+        af::deviceInfo(deviceName, platform, toolkit, compute);
         // Create a text file that stores the system configuration
-        //std::string deviceNameStr(deviceName);
-        //std::string platformStr(platform);
+        std::string deviceNameStr(deviceName);
+        std::string platformStr(platform);
         std::filesystem::create_directories("./results");
-        //std::string systemConfigFile = "./results/systemConfig_"+deviceNameStr+"_"+platformStr+".txt";
-        //std::ofstream sysConfig(systemConfigFile);
-        //if (sysConfig.is_open()) {
-        //    sysConfig << "System Configuration\n";
-        //    // write the output of af::info() to the file
-        //    sysConfig << af::infoString(true) << std::endl;
-        //    // write the system configuration to the console
-        //    // write various system details
-        //    //getSystemInfo(sysConfig);
+        std::string systemConfigFile = "./results/systemConfig_"+deviceNameStr+"_"+platformStr+".txt";
+        std::ofstream sysConfig(systemConfigFile);
+        if (sysConfig.is_open()) {
+            sysConfig << "System Configuration\n";
+            // write the output of af::info() to the file
+            sysConfig << af::infoString(true) << std::endl;
+            // write the system configuration to the console
+            // write various system details
+            //getSystemInfo(sysConfig);
 
-        //    sysConfig.close();
-        //}
-        //else {
-        //    std::cerr << "Unable to open file " << systemConfigFile << std::endl;
-        //}
+            sysConfig.close();
+        }
+        else {
+            std::cerr << "Unable to open file " << systemConfigFile << std::endl;
+        }
 
-        //std::string csvFile = "./results/benchmarkResults_"+deviceNameStr+"_"+platformStr+".csv";
-        std::string csvFile = "./results/benchmarkResults_.csv";
+        std::string csvFile = "./results/benchmarkResults_"+deviceNameStr+"_"+platformStr+".csv";
+        //std::string csvFile = "./results/benchmarkResults_.csv";
 
         // Header for CSV file
         std::ofstream file(csvFile);
