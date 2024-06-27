@@ -1,9 +1,5 @@
 #include "BenchmarkTest.h"
 
-// generate millions of random samples
-static int samples = 10e6;
-// Multiple runs for accurate timing
-const int num_runs = 100;
 
 BenchmarkTest::BenchmarkTest(int samples, int num_runs) : samples(samples), num_runs(num_runs)
 {
