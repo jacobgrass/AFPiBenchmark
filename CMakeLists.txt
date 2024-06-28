@@ -2,6 +2,9 @@
 
 project(AFPiBenchMark)
 
+# Use CMAKE_PREFIX_PATH to help find the installed ArrayFire package
+list(APPEND CMAKE_PREFIX_PATH "$ENV{CMAKE_PREFIX_PATH}")
+
 #add_executable(AFPiBenchMark "main.cpp" "AFPiBenchMark.h")
 
 # Set the C++ standard

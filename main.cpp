@@ -33,60 +33,6 @@ double measure(Func&& f) {
     return duration<double>(end - start).count();
 }
 
-void getSystemInfo(std::ofstream& sysConfig) {
-#ifdef _WIN32
-    //SYSTEM_INFO siSysInfo;
-    //GetSystemInfo(&siSysInfo);
-
-    //sysConfig << "Processor Architecture: ";
-    //switch (siSysInfo.wProcessorArchitecture) {
-    //case PROCESSOR_ARCHITECTURE_AMD64:
-    //    sysConfig << "x64 (AMD or Intel)" << std::endl;
-    //    break;
-    //case PROCESSOR_ARCHITECTURE_ARM:
-    //    sysConfig << "ARM" << std::endl;
-    //    break;
-    //case PROCESSOR_ARCHITECTURE_IA64:
-    //    sysConfig << "Intel Itanium-based" << std::endl;
-    //    break;
-    //case PROCESSOR_ARCHITECTURE_INTEL:
-    //    sysConfig << "x86" << std::endl;
-    //    break;
-    //default:
-    //    sysConfig << "Unknown architecture" << std::endl;
-    //    break;
-    //}
-
-    //sysConfig << "Number of Processors: " << siSysInfo.dwNumberOfProcessors << std::endl;
-
-    //TCHAR szBuffer[MAX_PATH];
-    //DWORD dwSize = sizeof(szBuffer) / sizeof(szBuffer[0]);
-    //if (GetComputerName(szBuffer, &dwSize))
-    //    sysConfig << "Computer Name: " << szBuffer << std::endl;
-
-    // Other system info can be added similarly using Windows API
-#else
-    //struct utsname buffer;
-    //if (uname(&buffer) != 0) {
-    //    perror("uname");
-    //    return;
-    //}
-
-    //sysConfig << "System Name: " << buffer.sysname << std::endl;
-    //sysConfig << "Node Name: " << buffer.nodename << std::endl;
-    //sysConfig << "Release: " << buffer.release << std::endl;
-    //sysConfig << "Version: " << buffer.version << std::endl;
-    //sysConfig << "Machine: " << buffer.machine << std::endl;
-
-    //long nprocs = sysconf(_SC_NPROCESSORS_ONLN);
-    //sysConfig << "Number of CPU cores: " << nprocs << std::endl;
-
-    //char hostname[1024];
-    //gethostname(hostname, 1024);
-    //sysConfig << "Hostname: " << hostname << std::endl;
-#endif
-}
-
 void runTest(float samples, int num_runs, std::string csvFile) {
     std::vector<double> times_device(num_runs);
     std::vector<double> times_host(num_runs);
@@ -163,9 +109,6 @@ int main(int argc, char** argv) {
             sysConfig << "System Configuration\n";
             // write the output of af::info() to the file
             sysConfig << af::infoString(true) << std::endl;
-            // write the system configuration to the console
-            // write various system details
-            //getSystemInfo(sysConfig);
 
             sysConfig.close();
         }
@@ -174,7 +117,6 @@ int main(int argc, char** argv) {
         }
 
         std::string csvFile = "./results/benchmarkResults_"+deviceNameStr+"_"+platformStr+".csv";
-        //std::string csvFile = "./results/benchmarkResults_.csv";
 
         // Header for CSV file
         std::ofstream file(csvFile);

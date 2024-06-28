@@ -30,14 +30,27 @@ fi
 
 # Run the installer
 echo "Running the installer..."
-sudo ./$INSTALLER --prefix=$INSTALL_DIR
+sudo ./$INSTALLER --prefix=$INSTALL_PATH
 if [[ $? -ne 0 ]]; then
     echo "Failed to install ArrayFire."
     exit 1
 fi
+
+# Setup environment variables
+echo "Setting up environment variables..."
+
+# Append ArrayFire CMake directory to CMAKE_PREFIX_PATH
+echo "export CMAKE_PREFIX_PATH=\"$INSTALL_DIR:\$CMAKE_PREFIX_PATH\"" >> ~/.bashrc 
+
+# Append the ArrayFire lib directory to LD_LIBRARY_PATH for runtime linking
+echo "export AF_LIBRARY_PATH=\"$INSTALL_DIR/lib64:\$LD_LIBRARY_PATH\"" >> ~/.bashrc
+
+# Source bashrc to update current session
+source ~/.bashrc
 
 # Clean up
 echo "Cleaning up..."
 rm $INSTALLER
 
 echo "ArrayFire installed successfully to $INSTALL_DIR."
+echo "Environment set up. Please reopen your terminal or run 'source ~/.bashrc' to refresh settings."
