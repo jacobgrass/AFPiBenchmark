@@ -30,7 +30,7 @@ fi
 
 # Run the installer
 echo "Running the installer..."
-sudo ./$INSTALLER --prefix=$INSTALL_PATH
+sudo ./$INSTALLER --prefix=$INSTALL_DIR
 if [[ $? -ne 0 ]]; then
     echo "Failed to install ArrayFire."
     exit 1
