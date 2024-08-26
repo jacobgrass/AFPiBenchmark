@@ -12,7 +12,7 @@ URL="https://arrayfire.gateway.scarf.sh/linux/3.9.0/ArrayFire.sh"
 INSTALLER="ArrayFire.sh"
 
 # Directory for installation
-INSTALL_DIR="/opt/arrayfire/ArrayFire-3.9.0-Linux/"
+INSTALL_DIR="/opt/ArrayFire-3.9.0-Linux/"
 
 # Download the installer
 echo "Downloading ArrayFire installer..."
