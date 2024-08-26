@@ -49,7 +49,7 @@ echo "Setting up environment variables..."
 echo "export CMAKE_PREFIX_PATH=\"$INSTALL_DIR:\$CMAKE_PREFIX_PATH\"" >> ~/.bashrc 
 
 # Append the ArrayFire lib directory to LD_LIBRARY_PATH for runtime linking
-echo "export AF_LIBRARY_PATH=\"$INSTALL_DIR/lib64:\$LD_LIBRARY_PATH\"" >> ~/.bashrc
+echo "export AF_LIBRARY_PATH=\"$INSTALL_DIR/$lib64:\$LD_LIBRARY_PATH\"" >> ~/.bashrc
 
 echo $INSTALL_DIR/lib64 > /etc/ld.so.conf.d/arrayfire.conf
 sudo ldconfig
@@ -67,7 +67,7 @@ echo "Installing other dependencies..."
 apt install build-essential libfreeimage3 libfontconfig1 libglu1-mesa
 
 echo "Testing ArrayFire installation:"
-cp -r $INSTALL_DIR/share/ArrayFire/examples /tmp/examples
+cp -r "$INSTALL_DIR/$share/ArrayFire/examples" /tmp/examples
 cd /tmp/examples
 mkdir build
 cd build
