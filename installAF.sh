@@ -72,7 +72,7 @@ cd /tmp/examples
 mkdir build
 cd build
 cmake ..
-make
+make -j8
 
 ./helloworld/helloworld_cpu
 ./helloworld/helloworld_cuda
