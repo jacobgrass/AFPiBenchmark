@@ -67,7 +67,7 @@ echo "Installing other dependencies..."
 apt install build-essential libfreeimage3 libfontconfig1 libglu1-mesa
 
 echo "Testing ArrayFire installation:"
-cp -r "$INSTALL_DIR/$share/ArrayFire/examples" /tmp/examples
+cp -r "$INSTALL_DIR/share/ArrayFire/examples" /tmp/examples
 cd /tmp/examples
 mkdir build
 cd build
