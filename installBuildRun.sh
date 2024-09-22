@@ -1,28 +1,3 @@
-#!/bin/bash
-#!/bin/bash
-
-# This script sequentially executes other scripts: installation, building, and running.
-
-echo "Starting installation..."
-./installAF.sh
-if [ $? -ne 0 ]; then
-    echo "Installation failed."
-    exit 1
-fi
-
-echo "Building project..."
-./build.sh
-if [ $? -ne 0 ]; then
-    echo "Build failed."
-    exit 1
-fi
-
-echo "Running all components..."
-./runAll.sh
-if [ $? -ne 0 ]; then
-    echo "Execution failed."
-    exit 1
-fi
-
-echo "All steps completed successfully."
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:bd9969d84b32aed45ad7a50b71d456685073f979e8176e7b2eafea7b2e2ec732
+size 483

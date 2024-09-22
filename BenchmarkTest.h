@@ -1,24 +1,3 @@
-#pragma once
-#include <arrayfire.h>
-#include <math.h>
-#include <stdio.h>
-#include <cstdlib>
-#include <numeric> // Include this header for std::accumulate
-#include <iostream>
-#include <cmath>
-#include <random>
-#include <omp.h>
-#include <chrono>
-using namespace af;
-using namespace std::chrono;
-
-class BenchmarkTest
-{
-public:
-	int samples;
-	int num_runs;
-	BenchmarkTest(int samples, int num_runs);
-	void pi_device(double& result);
-	void pi_host(double& result);
-	void pi_omp(double& result);
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:7d2616c07304b17cee0ce40d57d121c540e2522c0ecb6658b950f985c996d01f
+size 493
