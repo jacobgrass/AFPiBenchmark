@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 875 560" width="875" height="560" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+<style>
+svg { --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#6f6d68; --grid:#e1e0d9; --axis:#c3c2b7;
+      --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; }
+@media (prefers-color-scheme: dark) {
+  svg { --surface:#1a1a19; --ink:#ffffff; --ink2:#c3c2b7; --muted:#a3a29b; --grid:#2c2c2a; --axis:#383835;
+        --s1:#3987e5; --s2:#d95926; --s3:#199e70; }
+}
+text { fill: var(--ink2); font-size: 12px; }
+.title { fill: var(--ink); font-size: 16px; font-weight: 600; }
+.sub { fill: var(--ink2); font-size: 12px; }
+.tick { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.lab { fill: var(--ink); font-size: 12px; font-weight: 500; }
+.note { fill: var(--ink2); font-size: 11px; }
+</style>
+<title id="t">Time to estimate pi against number of samples, log-log</title>
+<desc id="d">Median across 10 sweeps (4 at 1B) of 20 timed runs per size on an NVIDIA GeForce RTX 4060 and an AMD Ryzen 9 5950X under WSL2. The GPU overtakes one CPU thread between 10,000 and 100,000 samples.</desc>
+<rect width="875" height="560" fill="var(--surface)"/>
+<text class="title" x="84" y="30">Time to estimate pi, by number of samples</text>
+<text class="sub" x="84" y="50">Median across 10 sweeps (4 at 1B) of 20 timed runs after a warm-up call · whiskers: range of sweep medians · log-log</text>
+<text class="sub" x="84" y="68">NVIDIA GeForce RTX 4060 (8 GB) · AMD Ryzen 9 5950X, 16 logical CPUs · WSL2 · ArrayFire 3.9.0 · GCC 13.3 -O3</text>
+<line x1="84" x2="710" y1="490.0" y2="490.0" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="76" y="494.0" text-anchor="end">10 ns</text>
+<line x1="84" x2="710" y1="453.0" y2="453.0" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="76" y="457.0" text-anchor="end">100 ns</text>
+<line x1="84" x2="710" y1="416.0" y2="416.0" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="76" y="420.0" text-anchor="end">1 µs</text>
+<line x1="84" x2="710" y1="379.0" y2="379.0" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="76" y="383.0" text-anchor="end">10 µs</text>
+<line x1="84" x2="710" y1="342.0" y2="342.0" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="76" y="346.0" text-anchor="end">100 µs</text>
+<line x1="84" x2="710" y1="305.0" y2="305.0" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="76" y="309.0" text-anchor="end">1 ms</text>
+<line x1="84" x2="710" y1="268.0" y2="268.0" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="76" y="272.0" text-anchor="end">10 ms</text>
+<line x1="84" x2="710" y1="231.0" y2="231.0" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="76" y="235.0" text-anchor="end">100 ms</text>
+<line x1="84" x2="710" y1="194.0" y2="194.0" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="76" y="198.0" text-anchor="end">1 s</text>
+<line x1="84" x2="710" y1="157.0" y2="157.0" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="76" y="161.0" text-anchor="end">10 s</text>
+<line x1="84" x2="710" y1="120.0" y2="120.0" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="76" y="124.0" text-anchor="end">100 s</text>
+<line x1="84.0" x2="84.0" y1="120" y2="490" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="84.0" y="508" text-anchor="middle">1</text>
+<line x1="153.6" x2="153.6" y1="120" y2="490" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="153.6" y="508" text-anchor="middle">10</text>
+<line x1="223.1" x2="223.1" y1="120" y2="490" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="223.1" y="508" text-anchor="middle">100</text>
+<line x1="292.7" x2="292.7" y1="120" y2="490" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="292.7" y="508" text-anchor="middle">1K</text>
+<line x1="362.2" x2="362.2" y1="120" y2="490" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="362.2" y="508" text-anchor="middle">10K</text>
+<line x1="431.8" x2="431.8" y1="120" y2="490" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="431.8" y="508" text-anchor="middle">100K</text>
+<line x1="501.3" x2="501.3" y1="120" y2="490" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="501.3" y="508" text-anchor="middle">1M</text>
+<line x1="570.9" x2="570.9" y1="120" y2="490" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="570.9" y="508" text-anchor="middle">10M</text>
+<line x1="640.4" x2="640.4" y1="120" y2="490" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="640.4" y="508" text-anchor="middle">100M</text>
+<line x1="710.0" x2="710.0" y1="120" y2="490" stroke="var(--grid)" stroke-width="1"/>
+<text class="tick" x="710.0" y="508" text-anchor="middle">1B</text>
+<line x1="84" x2="710" y1="490" y2="490" stroke="var(--axis)" stroke-width="1"/>
+<line x1="84" x2="84" y1="120" y2="490" stroke="var(--axis)" stroke-width="1"/>
+<text class="lab" x="397.0" y="538" text-anchor="middle">Samples (random points)</text>
+<text class="lab" transform="translate(20 305.0) rotate(-90)" text-anchor="middle">Time per estimate (median)</text>
+<text class="note" x="702.0" y="136" text-anchor="end">Hollow point: 1 billion samples need 8 GB,</text>
+<text class="note" x="702.0" y="150" text-anchor="end">more than this 8 GB card had free</text>
+<line x1="377.1" x2="377.1" y1="343.9" y2="490" stroke="var(--ink2)" stroke-width="1"/>
+<circle cx="377.1" cy="333.9" r="9" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+<text class="lab" x="389.1" y="428.9">GPU overtakes one CPU thread</text>
+<text class="note" x="389.1" y="443.9">between 10,000 and 100,000 samples</text>
+<path d="M84.0 337.7 L153.6 326.2 L223.1 329.9 L292.7 331.3 L362.2 333.7 L431.8 334.8 L501.3 338.3 L570.9 308.5 L640.4 273.3" fill="none" stroke="var(--s1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M640.4 273.3 L710.0 170.2" fill="none" stroke="var(--s1)" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round"/>
+<line x1="84.0" x2="84.0" y1="343.3" y2="324.4" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/>
+<line x1="153.6" x2="153.6" y1="340.1" y2="321.6" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/>
+<line x1="223.1" x2="223.1" y1="340.9" y2="321.8" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/>
+<line x1="292.7" x2="292.7" y1="344.4" y2="321.5" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/>
+<line x1="362.2" x2="362.2" y1="342.6" y2="320.2" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/>
+<line x1="431.8" x2="431.8" y1="341.4" y2="323.9" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/>
+<line x1="501.3" x2="501.3" y1="339.5" y2="325.9" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/>
+<line x1="570.9" x2="570.9" y1="310.1" y2="307.6" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/>
+<line x1="640.4" x2="640.4" y1="274.6" y2="273.2" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/>
+<line x1="710.0" x2="710.0" y1="171.6" y2="169.5" stroke="var(--s1)" stroke-width="2" stroke-linecap="round"/>
+<g><circle cx="84.0" cy="337.7" r="7" fill="var(--surface)"/><circle cx="84.0" cy="337.7" r="4.5" class="mk" fill="var(--s1)" stroke="var(--s1)" stroke-width="0"/><title>GPU (ArrayFire CUDA), 1 samples: median 130.8 µs (sweep medians: 92.4 µs to 299.8 µs)</title></g>
+<g><circle cx="153.6" cy="326.2" r="7" fill="var(--surface)"/><circle cx="153.6" cy="326.2" r="4.5" class="mk" fill="var(--s1)" stroke="var(--s1)" stroke-width="0"/><title>GPU (ArrayFire CUDA), 10 samples: median 267.7 µs (sweep medians: 112.2 µs to 356.8 µs)</title></g>
+<g><circle cx="223.1" cy="329.9" r="7" fill="var(--surface)"/><circle cx="223.1" cy="329.9" r="4.5" class="mk" fill="var(--s1)" stroke="var(--s1)" stroke-width="0"/><title>GPU (ArrayFire CUDA), 100 samples: median 211.9 µs (sweep medians: 107.4 µs to 350.6 µs)</title></g>
+<g><circle cx="292.7" cy="331.3" r="7" fill="var(--surface)"/><circle cx="292.7" cy="331.3" r="4.5" class="mk" fill="var(--s1)" stroke="var(--s1)" stroke-width="0"/><title>GPU (ArrayFire CUDA), 1,000 samples: median 194.3 µs (sweep medians: 86.2 µs to 359.0 µs)</title></g>
+<g><circle cx="362.2" cy="333.7" r="7" fill="var(--surface)"/><circle cx="362.2" cy="333.7" r="4.5" class="mk" fill="var(--s1)" stroke="var(--s1)" stroke-width="0"/><title>GPU (ArrayFire CUDA), 10,000 samples: median 167.4 µs (sweep medians: 96.3 µs to 388.7 µs)</title></g>
+<g><circle cx="431.8" cy="334.8" r="7" fill="var(--surface)"/><circle cx="431.8" cy="334.8" r="4.5" class="mk" fill="var(--s1)" stroke="var(--s1)" stroke-width="0"/><title>GPU (ArrayFire CUDA), 100,000 samples: median 156.6 µs (sweep medians: 103.6 µs to 308.2 µs)</title></g>
+<g><circle cx="501.3" cy="338.3" r="7" fill="var(--surface)"/><circle cx="501.3" cy="338.3" r="4.5" class="mk" fill="var(--s1)" stroke="var(--s1)" stroke-width="0"/><title>GPU (ArrayFire CUDA), 1,000,000 samples: median 126.2 µs (sweep medians: 116.9 µs to 273.1 µs)</title></g>
+<g><circle cx="570.9" cy="308.5" r="7" fill="var(--surface)"/><circle cx="570.9" cy="308.5" r="4.5" class="mk" fill="var(--s1)" stroke="var(--s1)" stroke-width="0"/><title>GPU (ArrayFire CUDA), 10,000,000 samples: median 802.3 µs (sweep medians: 729.2 µs to 848.0 µs)</title></g>
+<g><circle cx="640.4" cy="273.3" r="7" fill="var(--surface)"/><circle cx="640.4" cy="273.3" r="4.5" class="mk" fill="var(--s1)" stroke="var(--s1)" stroke-width="0"/><title>GPU (ArrayFire CUDA), 100,000,000 samples: median 7.18 ms (sweep medians: 6.63 ms to 7.25 ms)</title></g>
+<g><circle cx="710.0" cy="170.2" r="7" fill="var(--surface)"/><circle cx="710.0" cy="170.2" r="4.5" class="mk" fill="var(--surface)" stroke="var(--s1)" stroke-width="2"/><title>GPU (ArrayFire CUDA), 1,000,000,000 samples: median 4.40 s (sweep medians: 4.04 s to 4.58 s) — exceeds GPU memory</title></g>
+<path d="M84.0 469.5 L153.6 443.2 L223.1 415.0 L292.7 378.6 L362.2 341.8 L431.8 304.9 L501.3 267.9 L570.9 230.9 L640.4 193.9 L710.0 157.1" fill="none" stroke="var(--s2)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="84.0" x2="84.0" y1="472.3" y2="465.7" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/>
+<line x1="153.6" x2="153.6" y1="450.1" y2="441.1" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/>
+<line x1="223.1" x2="223.1" y1="416.5" y2="408.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/>
+<line x1="292.7" x2="292.7" y1="380.1" y2="371.3" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/>
+<line x1="362.2" x2="362.2" y1="343.4" y2="334.2" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/>
+<line x1="431.8" x2="431.8" y1="305.5" y2="304.1" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/>
+<line x1="501.3" x2="501.3" y1="269.0" y2="266.7" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/>
+<line x1="570.9" x2="570.9" y1="231.9" y2="230.0" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/>
+<line x1="640.4" x2="640.4" y1="195.0" y2="193.5" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/>
+<line x1="710.0" x2="710.0" y1="157.8" y2="156.4" stroke="var(--s2)" stroke-width="2" stroke-linecap="round"/>
+<g><circle cx="84.0" cy="469.5" r="7" fill="var(--surface)"/><rect x="80.0" y="465.5" width="8" height="8" rx="1" class="mk" fill="var(--s2)" stroke="var(--s2)" stroke-width="0"/><title>One CPU thread, 1 samples: median 36 ns (sweep medians: 30 ns to 46 ns)</title></g>
+<g><circle cx="153.6" cy="443.2" r="7" fill="var(--surface)"/><rect x="149.6" y="439.2" width="8" height="8" rx="1" class="mk" fill="var(--s2)" stroke="var(--s2)" stroke-width="0"/><title>One CPU thread, 10 samples: median 184 ns (sweep medians: 120 ns to 210 ns)</title></g>
+<g><circle cx="223.1" cy="415.0" r="7" fill="var(--surface)"/><rect x="219.1" y="411.0" width="8" height="8" rx="1" class="mk" fill="var(--s2)" stroke="var(--s2)" stroke-width="0"/><title>One CPU thread, 100 samples: median 1.1 µs (sweep medians: 969 ns to 1.6 µs)</title></g>
+<g><circle cx="292.7" cy="378.6" r="7" fill="var(--surface)"/><rect x="288.7" y="374.6" width="8" height="8" rx="1" class="mk" fill="var(--s2)" stroke="var(--s2)" stroke-width="0"/><title>One CPU thread, 1,000 samples: median 10.3 µs (sweep medians: 9.3 µs to 16.2 µs)</title></g>
+<g><circle cx="362.2" cy="341.8" r="7" fill="var(--surface)"/><rect x="358.2" y="337.8" width="8" height="8" rx="1" class="mk" fill="var(--s2)" stroke="var(--s2)" stroke-width="0"/><title>One CPU thread, 10,000 samples: median 101.0 µs (sweep medians: 91.8 µs to 162.3 µs)</title></g>
+<g><circle cx="431.8" cy="304.9" r="7" fill="var(--surface)"/><rect x="427.8" y="300.9" width="8" height="8" rx="1" class="mk" fill="var(--s2)" stroke="var(--s2)" stroke-width="0"/><title>One CPU thread, 100,000 samples: median 1.01 ms (sweep medians: 972.3 µs to 1.06 ms)</title></g>
+<g><circle cx="501.3" cy="267.9" r="7" fill="var(--surface)"/><rect x="497.3" y="263.9" width="8" height="8" rx="1" class="mk" fill="var(--s2)" stroke="var(--s2)" stroke-width="0"/><title>One CPU thread, 1,000,000 samples: median 10.04 ms (sweep medians: 9.38 ms to 10.87 ms)</title></g>
+<g><circle cx="570.9" cy="230.9" r="7" fill="var(--surface)"/><rect x="566.9" y="226.9" width="8" height="8" rx="1" class="mk" fill="var(--s2)" stroke="var(--s2)" stroke-width="0"/><title>One CPU thread, 10,000,000 samples: median 100.73 ms (sweep medians: 94.49 ms to 106.16 ms)</title></g>
+<g><circle cx="640.4" cy="193.9" r="7" fill="var(--surface)"/><rect x="636.4" y="189.9" width="8" height="8" rx="1" class="mk" fill="var(--s2)" stroke="var(--s2)" stroke-width="0"/><title>One CPU thread, 100,000,000 samples: median 1.01 s (sweep medians: 938.56 ms to 1.03 s)</title></g>
+<g><circle cx="710.0" cy="157.1" r="7" fill="var(--surface)"/><rect x="706.0" y="153.1" width="8" height="8" rx="1" class="mk" fill="var(--s2)" stroke="var(--s2)" stroke-width="0"/><title>One CPU thread, 1,000,000,000 samples: median 9.92 s (sweep medians: 9.50 s to 10.38 s)</title></g>
+<path d="M84.0 378.1 L153.6 378.2 L223.1 378.0 L292.7 377.1 L362.2 370.0 L431.8 343.5 L501.3 307.7 L570.9 270.3 L640.4 233.7 L710.0 200.1" fill="none" stroke="var(--s3)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="84.0" x2="84.0" y1="379.9" y2="265.1" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/>
+<line x1="153.6" x2="153.6" y1="379.4" y2="377.7" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/>
+<line x1="223.1" x2="223.1" y1="379.5" y2="376.3" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/>
+<line x1="292.7" x2="292.7" y1="378.2" y2="376.4" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/>
+<line x1="362.2" x2="362.2" y1="371.8" y2="366.8" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/>
+<line x1="431.8" x2="431.8" y1="346.9" y2="339.9" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/>
+<line x1="501.3" x2="501.3" y1="312.9" y2="306.2" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/>
+<line x1="570.9" x2="570.9" y1="272.3" y2="259.6" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/>
+<line x1="640.4" x2="640.4" y1="236.2" y2="233.3" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/>
+<line x1="710.0" x2="710.0" y1="201.3" y2="199.6" stroke="var(--s3)" stroke-width="2" stroke-linecap="round"/>
+<g><circle cx="84.0" cy="378.1" r="7" fill="var(--surface)"/><path d="M84.0 372.6 L89.5 378.1 L84.0 383.6 L78.5 378.1 Z" class="mk" fill="var(--s3)" stroke="var(--s3)" stroke-width="0"/><title>16 CPU threads (OpenMP), 1 samples: median 10.6 µs (sweep medians: 9.4 µs to 12.00 ms)</title></g>
+<g><circle cx="153.6" cy="378.2" r="7" fill="var(--surface)"/><path d="M153.6 372.7 L159.1 378.2 L153.6 383.7 L148.1 378.2 Z" class="mk" fill="var(--s3)" stroke="var(--s3)" stroke-width="0"/><title>16 CPU threads (OpenMP), 10 samples: median 10.5 µs (sweep medians: 9.7 µs to 10.8 µs)</title></g>
+<g><circle cx="223.1" cy="378.0" r="7" fill="var(--surface)"/><path d="M223.1 372.5 L228.6 378.0 L223.1 383.5 L217.6 378.0 Z" class="mk" fill="var(--s3)" stroke="var(--s3)" stroke-width="0"/><title>16 CPU threads (OpenMP), 100 samples: median 10.6 µs (sweep medians: 9.7 µs to 11.9 µs)</title></g>
+<g><circle cx="292.7" cy="377.1" r="7" fill="var(--surface)"/><path d="M292.7 371.6 L298.2 377.1 L292.7 382.6 L287.2 377.1 Z" class="mk" fill="var(--s3)" stroke="var(--s3)" stroke-width="0"/><title>16 CPU threads (OpenMP), 1,000 samples: median 11.2 µs (sweep medians: 10.5 µs to 11.8 µs)</title></g>
+<g><circle cx="362.2" cy="370.0" r="7" fill="var(--surface)"/><path d="M362.2 364.5 L367.7 370.0 L362.2 375.5 L356.7 370.0 Z" class="mk" fill="var(--s3)" stroke="var(--s3)" stroke-width="0"/><title>16 CPU threads (OpenMP), 10,000 samples: median 17.5 µs (sweep medians: 15.6 µs to 21.3 µs)</title></g>
+<g><circle cx="431.8" cy="343.5" r="7" fill="var(--surface)"/><path d="M431.8 338.0 L437.3 343.5 L431.8 349.0 L426.3 343.5 Z" class="mk" fill="var(--s3)" stroke="var(--s3)" stroke-width="0"/><title>16 CPU threads (OpenMP), 100,000 samples: median 91.1 µs (sweep medians: 73.9 µs to 113.9 µs)</title></g>
+<g><circle cx="501.3" cy="307.7" r="7" fill="var(--surface)"/><path d="M501.3 302.2 L506.8 307.7 L501.3 313.2 L495.8 307.7 Z" class="mk" fill="var(--s3)" stroke="var(--s3)" stroke-width="0"/><title>16 CPU threads (OpenMP), 1,000,000 samples: median 846.7 µs (sweep medians: 612.0 µs to 930.7 µs)</title></g>
+<g><circle cx="570.9" cy="270.3" r="7" fill="var(--surface)"/><path d="M570.9 264.8 L576.4 270.3 L570.9 275.8 L565.4 270.3 Z" class="mk" fill="var(--s3)" stroke="var(--s3)" stroke-width="0"/><title>16 CPU threads (OpenMP), 10,000,000 samples: median 8.64 ms (sweep medians: 7.66 ms to 16.87 ms)</title></g>
+<g><circle cx="640.4" cy="233.7" r="7" fill="var(--surface)"/><path d="M640.4 228.2 L645.9 233.7 L640.4 239.2 L634.9 233.7 Z" class="mk" fill="var(--s3)" stroke="var(--s3)" stroke-width="0"/><title>16 CPU threads (OpenMP), 100,000,000 samples: median 84.29 ms (sweep medians: 72.22 ms to 86.65 ms)</title></g>
+<g><circle cx="710.0" cy="200.1" r="7" fill="var(--surface)"/><path d="M710.0 194.6 L715.5 200.1 L710.0 205.6 L704.5 200.1 Z" class="mk" fill="var(--s3)" stroke="var(--s3)" stroke-width="0"/><title>16 CPU threads (OpenMP), 1,000,000,000 samples: median 685.81 ms (sweep medians: 635.47 ms to 703.85 ms)</title></g>
+<line x1="722" x2="734" y1="157.1" y2="157.1" stroke="var(--s2)" stroke-width="2"/>
+<text class="lab" x="738" y="161.1">1 CPU thread</text>
+<line x1="722" x2="734" y1="173.1" y2="173.1" stroke="var(--s1)" stroke-width="2"/>
+<text class="lab" x="738" y="177.1">GPU</text>
+<line x1="722" x2="734" y1="200.1" y2="200.1" stroke="var(--s3)" stroke-width="2"/>
+<text class="lab" x="738" y="204.1">OpenMP, 16 threads</text>
+<line x1="84" x2="102" y1="98" y2="98" stroke="var(--s1)" stroke-width="2"/>
+<g><circle cx="93.0" cy="98.0" r="7" fill="var(--surface)"/><circle cx="93.0" cy="98.0" r="4.5" class="mk" fill="var(--s1)" stroke="var(--s1)" stroke-width="0"/><title>GPU (ArrayFire CUDA)</title></g>
+<text x="108" y="102">GPU (ArrayFire CUDA)</text>
+<line x1="258" x2="276" y1="98" y2="98" stroke="var(--s2)" stroke-width="2"/>
+<g><circle cx="267.0" cy="98.0" r="7" fill="var(--surface)"/><rect x="263.0" y="94.0" width="8" height="8" rx="1" class="mk" fill="var(--s2)" stroke="var(--s2)" stroke-width="0"/><title>One CPU thread</title></g>
+<text x="282" y="102">One CPU thread</text>
+<line x1="390" x2="408" y1="98" y2="98" stroke="var(--s3)" stroke-width="2"/>
+<g><circle cx="399.0" cy="98.0" r="7" fill="var(--surface)"/><path d="M399.0 92.5 L404.5 98.0 L399.0 103.5 L393.5 98.0 Z" class="mk" fill="var(--s3)" stroke="var(--s3)" stroke-width="0"/><title>16 CPU threads (OpenMP)</title></g>
+<text x="414" y="102">16 CPU threads (OpenMP)</text>
+</svg>

@@ -1,0 +1,8 @@
+idle_test.cpp on the RTX 4060 under WSL2, 2026-10-01 about 22:44 UTC (1-minute load about 1.4).
+Built with: c++ -O3 -std=gnu++20 idle_test.cpp -I<ArrayFire>/include -L<ArrayFire>/lib64 -lafcuda
+Each line: six 100-million-sample calls (randu, compare, sum, af::sync), each after the stated idle time. Times in ms.
+idle     0 ms before each call:    6.53    6.55    6.74    7.22    6.59    6.54 ms
+idle   100 ms before each call:    6.67    6.64    6.61    6.63    6.69    6.62 ms
+idle   300 ms before each call:    6.71    6.68    6.69    6.70    6.72    6.63 ms
+idle  1000 ms before each call:    6.70    6.68    6.65  117.19  186.98    6.66 ms
+idle  3000 ms before each call:   81.58  184.32   84.74  203.60    6.79    6.71 ms

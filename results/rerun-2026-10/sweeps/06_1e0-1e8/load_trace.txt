@@ -1,0 +1,6 @@
+01:51:14 2.43 4.58 7.16 gpu_mem_used=873 MiB
+01:51:19 2.31 4.52 7.13 gpu_mem_used=1934 MiB
+01:51:24 2.21 4.46 7.10 gpu_mem_used=1934 MiB
+01:51:29 2.11 4.40 7.06 gpu_mem_used=1934 MiB
+01:51:34 2.02 4.35 7.03 gpu_mem_used=1934 MiB
+01:51:39 1.94 4.29 7.00 gpu_mem_used=1934 MiB

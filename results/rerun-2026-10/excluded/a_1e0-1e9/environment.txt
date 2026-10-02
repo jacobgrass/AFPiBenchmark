@@ -1,0 +1,14 @@
+date_utc_start: 2026-10-01T22:58:14Z
+loadavg_start: 1.75 1.89 4.76 3/1280 3541108
+uname: Linux 6.6.87.2-microsoft-standard-WSL2 x86_64
+nvidia_smi: NVIDIA GeForce RTX 4060, 580.97, 8188 MiB, 941 MiB, 115.00 W, 3105 MHz
+| NVIDIA-SMI 580.76.04              Driver Version: 580.97         CUDA Version: 13.0     |
+cpu:  AMD Ryzen 9 5950X 16-Core Processor
+nproc: 16
+gcc: g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+cmake: cmake version 4.3.0
+arrayfire_dir: ~/toolchains/ArrayFire-3.9.0-Linux (ArrayFire-v3.9.0_Linux_x86_64.sh)
+command: build/AFPiBenchMark_cuda 0 20 9
+exit_code: 0
+loadavg_end: 31.10 13.51 8.19 7/1496 3554107
+date_utc_end: 2026-10-01T23:04:44Z

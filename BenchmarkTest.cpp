@@ -10,7 +10,11 @@ BenchmarkTest::BenchmarkTest(int samples, int num_runs) : samples(samples), num_
    will differ. */
 void BenchmarkTest::pi_device(double& result) {
     array x = randu(samples, f32), y = randu(samples, f32);
+    // sum<float>() copies the count back to the host, which forces evaluation of
+    // ArrayFire's lazy expression; sync() also waits for the device queue to empty
+    // before the timer stops
     result = 4.0 * sum<float>(sqrt(x * x + y * y) < 1) / samples;
+    af::sync();
 }
 
 

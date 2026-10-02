@@ -7,9 +7,19 @@ list(APPEND CMAKE_PREFIX_PATH "$ENV{CMAKE_PREFIX_PATH}")
 
 #add_executable(AFPiBenchMark "main.cpp" "AFPiBenchMark.h")
 
+# Build optimised by default: without a build type, single-config generators
+# pass no -O flag to the compiler
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+endif()
+
 # Set the C++ standard
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# Record the compiler, build type and flags in each results folder
+string(TOUPPER "${CMAKE_BUILD_TYPE}" AFPI_BUILD_TYPE_UPPER)
+add_compile_definitions(AFPI_BUILD_INFO="${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}, build type ${CMAKE_BUILD_TYPE}, flags ${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_${AFPI_BUILD_TYPE_UPPER}}")
 
 # Find ArrayFire
 find_package(ArrayFire REQUIRED)

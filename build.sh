@@ -2,7 +2,7 @@
 # Script to configure and build a CMake project
 
 # Configure the project
-cmake -B build -DCMSAKE_BUILD_TYPE=Release .
+cmake -B build -DCMAKE_BUILD_TYPE=Release .
 
 
 # Build the project

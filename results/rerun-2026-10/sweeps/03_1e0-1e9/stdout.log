@@ -1,0 +1,93 @@
+ArrayFire v3.9.0 (CUDA, 64-bit Linux, build b59a1ae53)
+Platform: CUDA Runtime 12.2, Driver: N/A
+[0] NVIDIA GeForce RTX 4060, 8188 MB, CUDA Compute 8.9
+Estimating PI using Monte Carlo method with:
+Samples: 1.0e+00, Runs: 20
+Memory required: 0.00 GB
+
+device: 0.000092 s median (min 0.000074, max 0.000183) to estimate pi = 4.000000
+  host: 0.000000 s median (min 0.000000, max 0.000000) to estimate pi = 4.000000
+   omp: 0.000011 s median (min 0.000010, max 0.000027) to estimate pi = 4.000000
+NOTE:  Device is the ArrayFire device, Host is single core performance, and OMP is multi-core performance
+
+Estimating PI using Monte Carlo method with:
+Samples: 1.0e+01, Runs: 20
+Memory required: 0.00 GB
+
+device: 0.000112 s median (min 0.000099, max 0.000149) to estimate pi = 3.200000
+  host: 0.000000 s median (min 0.000000, max 0.000000) to estimate pi = 3.200000
+   omp: 0.000011 s median (min 0.000010, max 0.000016) to estimate pi = 3.200000
+NOTE:  Device is the ArrayFire device, Host is single core performance, and OMP is multi-core performance
+
+Estimating PI using Monte Carlo method with:
+Samples: 1.0e+02, Runs: 20
+Memory required: 0.00 GB
+
+device: 0.000110 s median (min 0.000100, max 0.000165) to estimate pi = 3.140000
+  host: 0.000002 s median (min 0.000002, max 0.000002) to estimate pi = 3.140000
+   omp: 0.000011 s median (min 0.000010, max 0.000015) to estimate pi = 3.120000
+NOTE:  Device is the ArrayFire device, Host is single core performance, and OMP is multi-core performance
+
+Estimating PI using Monte Carlo method with:
+Samples: 1.0e+03, Runs: 20
+Memory required: 0.00 GB
+
+device: 0.000136 s median (min 0.000102, max 0.000184) to estimate pi = 3.146000
+  host: 0.000016 s median (min 0.000016, max 0.000028) to estimate pi = 3.142000
+   omp: 0.000011 s median (min 0.000010, max 0.000018) to estimate pi = 3.170000
+NOTE:  Device is the ArrayFire device, Host is single core performance, and OMP is multi-core performance
+
+Estimating PI using Monte Carlo method with:
+Samples: 1.0e+04, Runs: 20
+Memory required: 0.00 GB
+
+device: 0.000141 s median (min 0.000104, max 0.000236) to estimate pi = 3.146800
+  host: 0.000161 s median (min 0.000138, max 0.000175) to estimate pi = 3.140000
+   omp: 0.000017 s median (min 0.000017, max 0.000038) to estimate pi = 3.147400
+NOTE:  Device is the ArrayFire device, Host is single core performance, and OMP is multi-core performance
+
+Estimating PI using Monte Carlo method with:
+Samples: 1.0e+05, Runs: 20
+Memory required: 0.00 GB
+
+device: 0.000132 s median (min 0.000111, max 0.000189) to estimate pi = 3.141500
+  host: 0.000985 s median (min 0.000973, max 0.001411) to estimate pi = 3.143720
+   omp: 0.000077 s median (min 0.000062, max 0.000103) to estimate pi = 3.141080
+NOTE:  Device is the ArrayFire device, Host is single core performance, and OMP is multi-core performance
+
+Estimating PI using Monte Carlo method with:
+Samples: 1.0e+06, Runs: 20
+Memory required: 0.01 GB
+
+device: 0.000124 s median (min 0.000100, max 0.000194) to estimate pi = 3.141684
+  host: 0.009866 s median (min 0.009699, max 0.010193) to estimate pi = 3.141690
+   omp: 0.000612 s median (min 0.000533, max 0.004541) to estimate pi = 3.141210
+NOTE:  Device is the ArrayFire device, Host is single core performance, and OMP is multi-core performance
+
+Estimating PI using Monte Carlo method with:
+Samples: 1.0e+07, Runs: 20
+Memory required: 0.08 GB
+
+device: 0.000804 s median (min 0.000793, max 0.001115) to estimate pi = 3.141276
+  host: 0.099280 s median (min 0.097906, max 0.101826) to estimate pi = 3.141538
+   omp: 0.016871 s median (min 0.005610, max 0.020410) to estimate pi = 3.141618
+NOTE:  Device is the ArrayFire device, Host is single core performance, and OMP is multi-core performance
+
+Estimating PI using Monte Carlo method with:
+Samples: 1.0e+08, Runs: 20
+Memory required: 0.80 GB
+
+device: 0.007158 s median (min 0.007134, max 0.007266) to estimate pi = 3.141576
+  host: 1.003985 s median (min 0.992436, max 1.050670) to estimate pi = 3.141589
+   omp: 0.084719 s median (min 0.072057, max 0.092128) to estimate pi = 3.141558
+NOTE:  Device is the ArrayFire device, Host is single core performance, and OMP is multi-core performance
+
+Estimating PI using Monte Carlo method with:
+Samples: 1.0e+09, Runs: 20
+Memory required: 8.00 GB
+
+device: 4.579931 s median (min 4.381239, max 4.794431) to estimate pi = 3.141590
+  host: 10.222226 s median (min 10.152215, max 10.318566) to estimate pi = 3.141609
+   omp: 0.703851 s median (min 0.665425, max 0.760200) to estimate pi = 3.141600
+NOTE:  Device is the ArrayFire device, Host is single core performance, and OMP is multi-core performance
+
